@@ -9,6 +9,7 @@ const Login = () => {
 
   const [emailId, setEmailId] = useState("rhamond@gmail.com");
   const [password, setPassword] = useState("RHamond@123");
+  const [error, setError] = useState("")
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -24,11 +25,9 @@ const Login = () => {
       dispatch(addUser(res.data));
       return navigate("/")
     } catch (err) {
-      console.log(err);
+      setError(err?.response?.data || "Something went wrong");
     }
-
   }
-
   return (
     <div className='flex justify-center my-10'>
       <div className="card bg-base-300 w-96 shadow-xl ">
@@ -48,6 +47,7 @@ const Login = () => {
               <input type="text" value={password} className="input input-bordered w-full max-w-xs" onChange={(e) => setPassword(e.target.value)} />
             </label>
           </div>
+          <p className='text-red-500'>{error}</p>
           <div className="card-actions justify-center">
             <button className="btn btn-primary m-2" onClick={handleLogin}>Login</button>
           </div>

@@ -15,7 +15,7 @@ const Body = () => {
 
 
   const fetchUser = async () => {
-
+    if (userData) return;
     try {
       const res = await axios.get(BASE_URL + "/profile/view", { withCredentials: true });
 
@@ -25,15 +25,13 @@ const Body = () => {
       if (err.status === 401) {
         navigate("/login");
       }
-      //**Reminder : redirect to a page with error  
+      // for other errors we will redirect to page something went wrong
       console.error(err);
     }
   }
 
   useEffect(() => {
-    if (!userData) {
-      fetchUser();
-    }
+    fetchUser();
   }, [])
 
   return (
