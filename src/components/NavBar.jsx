@@ -14,6 +14,7 @@ const NavBar = () => {
   const handleLogout = async () => {
     try {
       await axios.post(BASE_URL + "/logout", {}, { withCredentials: true });
+      console.log(user.photoUrl)
       dispatch(removeUser());
       return navigate("/login");
     } catch (err) {
@@ -32,7 +33,7 @@ const NavBar = () => {
         </div>
         <div className="dropdown dropdown-end mx-5">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
+            <div className="w-10 rounded-full object-contain">
               <img
                 alt="Tailwind CSS Navbar component"
                 src={user.photoUrl} />
