@@ -29,10 +29,18 @@
 - Show toast message on save profile
 - New Page - See all my connections
 - New Page - Sell all my connections Requests
+- Feature - Accept/Reject Conection Requests
 
-- Body
-  ----NavBar
-  ----Route=/ =>feed
-  ----Route=/login => Login
-  ----Route=/connections => Connections
-  ----Route=/profile => Profile
+Remaining:
+
+- Send/Ignore the user card from feed
+- Signup New User
+- E2E Testing
+
+# Body
+
+----NavBar
+----Route=/ =>feed
+----Route=/login => Login
+----Route=/connections => Connections
+----Route=/profile => Profile
