@@ -30,10 +30,10 @@
 - New Page - See all my connections
 - New Page - Sell all my connections Requests
 - Feature - Accept/Reject Conection Requests
+- Send/Ignore the user card from feed
 
 Remaining:
 
-- Send/Ignore the user card from feed
 - Signup New User
 - E2E Testing
 
