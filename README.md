@@ -27,7 +27,8 @@
 - Build the userCard on feed
 - Edit Profile Feature
 - Show toast message on save profile
-- See all my connections
+- New Page - See all my connections
+- New Page - Sell all my connections Requests
 
 - Body
   ----NavBar
