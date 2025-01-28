@@ -9,9 +9,9 @@ const EditProfile = ({ user }) => {
   const [firstName, setFirstName] = useState(user.firstName);
   const [lastName, setLastName] = useState(user.lastName);
   const [photoUrl, setPhotoUrl] = useState(user.photoUrl);
-  const [age, setAge] = useState(user.age);
-  const [gender, setGender] = useState(user.gender);
-  const [about, setAbout] = useState(user.about)
+  const [age, setAge] = useState(user.age || "");
+  const [gender, setGender] = useState(user.gender || "");
+  const [about, setAbout] = useState(user.about || "")
   const [error, setError] = useState("")
   const [showToast, setShowToast] = useState(false);
   const dispatch = useDispatch();
@@ -21,10 +21,10 @@ const EditProfile = ({ user }) => {
     //Clear Errors
     setError("");
 
-
     try {
       const res = await axios.patch(BASE_URL + "/profile/edit", { firstName, lastName, photoUrl, age, gender, about }, { withCredentials: true });
 
+      console.log(res.data.data);
       dispatch(addUser(res?.data?.data));
       setShowToast(true);
       setTimeout(() => {
@@ -33,7 +33,6 @@ const EditProfile = ({ user }) => {
 
     } catch (err) {
       setError(err.response?.data || "An error occurred");
-      console.error(err);
     }
   }
   return (
