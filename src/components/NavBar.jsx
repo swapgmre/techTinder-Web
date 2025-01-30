@@ -24,7 +24,7 @@ const NavBar = () => {
   return (
     <div className="navbar bg-base-200">
       <div className="flex-1">
-        <Link to="/" className="btn btn-ghost text-xl">TechTinder🧑‍💻</Link>
+        <Link to="/" className="btn btn-ghost text-xl">Code-Mate🧑‍💻</Link>
       </div>
       {user && (<div className="flex-none gap-2">
         <div className="form-control">
